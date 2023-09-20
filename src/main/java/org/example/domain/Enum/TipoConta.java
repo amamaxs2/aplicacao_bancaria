@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.domain.Enum;
 
 public enum TipoConta {
     POUPANCA(1, "Conta poupança"),
@@ -6,10 +6,10 @@ public enum TipoConta {
     CORRENTE(3, "Conta corrente"),
     CONJUNTA(4, "Conta conjunta");
 
-    private int codigo;
+    private Integer codigo;
     private String nome;
 
-    TipoConta(int codigo, String nome) {
+    TipoConta(Integer codigo, String nome) {
         this.codigo = codigo;
         this.nome = nome;
     }

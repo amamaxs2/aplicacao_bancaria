@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.domain.Enum;
 
 public enum EstadoCivil {
     SOLTEIRO(1, "Solteiro(a)"),

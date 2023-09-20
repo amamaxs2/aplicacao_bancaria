@@ -1,22 +1,11 @@
 package org.example;
 
-/*
-Criar contas para pessoas e empresas
-Possibilidade de criar contas conjuntas (no máximo 2 pessoas do mesmo tipo com algum vínculo / ou união civil)
-Conta Poupança deve ser aberta com valor mínimo de R$50,00
-Conta Salário e Corrente não precisam de saldos iniciais.
-Ações:
-Transações bancárias (depósitos e pagamentos)
-Saldo
-Extrato por período
-Financiamento
-Aplicações
+import org.example.domain.Conta;
+import org.example.domain.Enum.TipoConta;
 
-Montar cenários compatíveis para testes unitários
-
-* */
 public class Main {
     public static void main(String[] args) {
+
 
     }
 }
