@@ -2,7 +2,11 @@ package org.example.domain;
 
 import org.example.domain.Enum.TipoConta;
 
-public class Conta implements ConfirmacaoCadastro{
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Conta{
 
     private Pessoa pessoa1;
     private Pessoa pessoa2;
@@ -10,6 +14,7 @@ public class Conta implements ConfirmacaoCadastro{
     private Double saldoInicial;
     private Integer idConta;
     private Double saldoBancario = 0.0;
+    private List<String> extrato = new ArrayList<>();
 
     public Conta(Pessoa pessoa1, Pessoa pessoa2, TipoConta tipoConta, Integer idConta, Double saldoInicial) {
         this.pessoa1 = pessoa1;
@@ -29,20 +34,27 @@ public class Conta implements ConfirmacaoCadastro{
         }
     }
 
-    public void debitarSaldo(double valor) {
-        if (valor > 0 && valor <- saldoBancario) {
+    public boolean debitarSaldo(double valor) {
+        if (valor > 0 && valor <= saldoBancario) {
             saldoBancario -= valor;
+            extrato.add("-" + valor + " " + LocalDate.now() + " Saldo: " + this.getSaldoBancario());
+            return true;
         } else {
-            System.out.println("Valor inválido ou saldo insuficiente.");
+            return false;
         }
     }
 
     public void creditarSaldo(double valor) {
         if (valor > 0) {
             saldoBancario += valor;
+            extrato.add("+" + valor + " " + LocalDate.now() + " Saldo: " + this.getSaldoBancario());
         } else {
             System.out.println("Valor inválido.");
         }
+    }
+
+    public String getPessoa1_nome() {
+        return pessoa1.getNome();
     }
 
     public Double getSaldoBancario() {

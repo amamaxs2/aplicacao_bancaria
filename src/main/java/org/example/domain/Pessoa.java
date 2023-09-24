@@ -1,8 +1,9 @@
 package org.example.domain;
 
 import org.example.domain.Enum.EstadoCivil;
+import org.example.service.FormatadorService;
 
-public class Pessoa extends Titular {
+public class Pessoa extends Titular implements ConfirmacaoCadastro {
 
     private String cpf;
     private String nome;
@@ -20,7 +21,6 @@ public class Pessoa extends Titular {
         this.profissao = profissao;
         this.genero = genero;
         this.cpfCompanheiro = cpfCompanheiro;
-
     }
 
     public String getCpf() {
@@ -37,5 +37,10 @@ public class Pessoa extends Titular {
 
     public String getCpfCompanheiro() {
         return cpfCompanheiro;
+    }
+
+    @Override
+    public String cpfFormatado(String cpf) {
+        return new FormatadorService().formatadorCpf(cpf);
     }
 }

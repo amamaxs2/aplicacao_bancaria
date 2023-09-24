@@ -4,6 +4,6 @@ import org.example.service.FormatadorService;
 
 public interface ConfirmacaoCadastro {
 
-    public double Conta(FormatadorService formatadorCpf);
+    public String cpfFormatado(String cpf);
 
 }
